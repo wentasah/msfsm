@@ -1,4 +1,12 @@
+examples/elevator.cpp
+examples/elevator2.cpp
+examples/events.cpp
+examples/meson.build
+examples/motor.cpp
+examples/simple.cpp
+main.cpp
 main.cpp
 meson.build
 msfsm.cpp
+msfsm.hpp
 msfsm.hpp

@@ -13,23 +13,25 @@ public:
 
     enum Event { up, down };
 
-    Semaphore() : Fsm(red) {
+    Semaphore() {
         transition(red, 1);
     }
 
+private:
+    friend Fsm;
+
     // Semaphore-specific state base class
-    class State : public Fsm::NamedState {
+    class State : public Fsm::State, public Named<State> {
         friend Fsm;
-        using Fsm::NamedState::NamedState;
-        void entry() { cout << __PRETTY_FUNCTION__ << endl; }
+        using Fsm::State::State;
+        void entry() { cout << "Entering: " << name() << endl; }
         void exit()  override { cout << __PRETTY_FUNCTION__ << endl; }
-        void event(Event) override {}
+        virtual void event(Event) {}
         virtual void event(Up e) {}
         virtual void event(Down e) {}
     };
 
-private:
-    class Red: public State {
+    class Red : public State {
         friend Fsm;
         using State::State;
         void entry(int x) {}
@@ -38,7 +40,7 @@ private:
         void exit()  override {}
     } red {this};
 
-    class Yellow: public State {
+    class Yellow : public State {
         using State::State;
         void exit()  override {}
         void event(Event e) override { if (e == up) transition(fsm.red, 2); }
@@ -46,7 +48,7 @@ private:
         void event(Down) override { transition(fsm.green); }
     } yellow {this};
 
-    class Green: public State {
+    class Green : public State {
         friend Fsm;
         using State::State;
         void entry() { cout << __PRETTY_FUNCTION__ << endl; }
@@ -55,16 +57,10 @@ private:
         void event(Up) override { transition(fsm.yellow); }
     } green {this};
 
-    void onTransition(Fsm::State &nextState) override {
-#if 0
+    void onTransition(State &nextState) {
         cout << "Transition: "
-             << boost::typeindex::type_id_runtime(*state()).pretty_name() << " -> "
-             << boost::typeindex::type_id_runtime(nextState).pretty_name() << endl;
-#else
-        cout << "Transition: "
-             << static_cast<State&>(state()).name() << " -> "
-             << static_cast<State&>(nextState).name() << endl;
-#endif
+             << (state() ? static_cast<State*>(state())->name() : "--") << " -> "
+             << nextState.name() << endl;
     }
 
 };
@@ -73,7 +69,6 @@ int main()
 {
     Semaphore sem;
     sem.handle(Semaphore::down);
-    sem.handle();
     sem.handle(Semaphore::Down());
     sem.handle(Semaphore::Down());
     sem.handle(Semaphore::Down());
