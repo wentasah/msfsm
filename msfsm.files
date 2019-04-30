@@ -4,6 +4,7 @@ examples/events.cpp
 examples/meson.build
 examples/motor.cpp
 examples/simple.cpp
+examples/states_out.cpp
 main.cpp
 main.cpp
 meson.build

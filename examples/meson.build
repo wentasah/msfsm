@@ -5,6 +5,7 @@ examples = [ 'simple',
 	     'elevator',
 	     'elevator2',
 	     'motor',
+	     'states_out',
 	   ]
 
 test_sh = find_program('test.sh')
