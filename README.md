@@ -13,7 +13,7 @@ Requirements
 - Transitions and guards expressed as C++ code (if/else, function
   calls, ...)
 - FSM can react to custom events represented by arbitrary types
-- Events can contain arbitrary payload that can be used in the
+- Events can contain an arbitrary payload that can be used in the
   handling code
 - No memory allocation during state changes (like in [Boost Statechart][])
 - No need to increase limits of other libraries (like
@@ -21,15 +21,15 @@ Requirements
 - No "advanced" template magic. Light template usage (understandable
   to me) is allowed :)
 - Allows multiple instances of the same state machine (as opposed to [tinyfsm][])
-- Enforce passing of additional data when transitioning to selected
-  states (e.g. error code must be specified when entering an error
-  state).
+- Compile-time enforcement of passing additional data when
+  transitioning to selected states (e.g., error code must be specified
+  when entering an error state).
 - Supports nested state machines
 
 Installation
 ------------
 
-This is a header-only library. Just copy it to your project and
+MSFSM is a header-only library. Just copy it to your project and
 include it.
 
 Documentation
