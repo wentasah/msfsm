@@ -29,14 +29,17 @@ Requirements
 Installation
 ------------
 
-MSFSM is a header-only library. Just copy it to your project and
-include it.
+MSFSM is a header-only library. Just copy `msfsm.hpp` to your project
+and include it.
 
 Documentation
 -------------
 
-Documentation is in preparation. For now, you can look at [several
-examples](examples/).
+[![Documentation Status](https://readthedocs.org/projects/msfsm/badge/?version=latest)](https://msfsm.readthedocs.io/en/latest/?badge=latest)
+
+[Documentation](http://msfsm.rtfd.io/) is available via
+readthedocs.org. You can also look at [several examples](examples/)
+here.
 
 [Boost Statechart]: https://www.boost.org/doc/libs/1_69_0/libs/statechart/doc/index.html
 [Boost MSM]: https://www.boost.org/doc/libs/1_69_0/libs/msm/doc/HTML/index.html
