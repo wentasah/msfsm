@@ -2,8 +2,8 @@
 //
 // SPDX-License-Identifier: MIT
 
-#ifndef FSM_HPP
-#define FSM_HPP
+#ifndef MSFSM_HPP
+#define MSFSM_HPP
 
 #include <iostream>
 #include <stdexcept>
@@ -95,4 +95,4 @@ public:
 
 }
 
-#endif // FSM_HPP
+#endif // MSFSM_HPP
