@@ -49,6 +49,7 @@ protected:
         static_cast<FSM*>(this)->onTransition(nextState);
         m_state = &nextState;
         nextState.entry(args...);
+        static_cast<FSM*>(this)->afterTransition();
     }
 
     // Call this from derived class destructor if needed. We cannot
@@ -65,6 +66,7 @@ private:
 
     // Prevent compile error if derived class does not have its own onTransition() method
     void onTransition(State &nextState) {}
+    void afterTransition() {}
 
 public:
     State* state() const { return m_state; }
