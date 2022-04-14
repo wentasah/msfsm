@@ -4,6 +4,7 @@ examples = [ 'simple',
 	     'events',
 	     'elevator',
 	     'elevator2',
+             'simple-nested',
 	     'motor',
 	     'states_out',
 	   ]
