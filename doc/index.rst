@@ -35,10 +35,10 @@ The state classes have to contain a little bit of "bolierplpate" code
 -- ``friend Fsm;`` and ``using State::State``. The friend declaration
 allows the ``Fsm`` class to call state methods. Alternatively, instead
 of declaring a friend, we could make all the state methods public, but
-this would mean that anybody can call them and we don't anybody to
+this would mean that anybody can call them and we don't want anybody to
 mess up with our states. ``using State::State;`` is there to inherit
 the constructor from ``Fsm::State``. If you need to define your own
-constructor, you will need call ``Fsm::State::State`` from it.
+constructor, you will need to call ``Fsm::State::State`` from it.
 
 Besides defining our state classes, we also immediately instantiate
 them as member variables of our state machine class and use C++11
