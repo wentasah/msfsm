@@ -6,6 +6,7 @@ examples = [ 'simple',
 	     'elevator2',
              'simple-nested',
 	     'motor',
+	     'motor-separate',
 	     'states_out',
 	   ]
 
