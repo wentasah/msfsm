@@ -1,0 +1,23 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: install dependencies
+      run: apt install meson libboost-dev
+    - uses: actions/checkout@v3
+    - name: configure
+      run: meson setup build
+    - name: build
+      run: ninja -C build
+    - name: test
+      run: ninja -C build test
