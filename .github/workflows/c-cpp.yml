@@ -13,7 +13,7 @@ jobs:
 
     steps:
     - name: install dependencies
-      run: apt install meson libboost-dev
+      run: sudo apt install meson libboost-dev
     - uses: actions/checkout@v3
     - name: configure
       run: meson setup build
