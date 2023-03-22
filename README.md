@@ -37,9 +37,9 @@ Documentation
 
 [![Documentation Status](https://readthedocs.org/projects/msfsm/badge/?version=latest)](https://msfsm.readthedocs.io/en/latest/?badge=latest)
 
-[Documentation](http://msfsm.rtfd.io/) is available via
-readthedocs.org. You can also look at [several examples](examples/)
-here.
+[Documentation](http://msfsm.rtfd.io/) (not complete yet) is available
+via readthedocs.org. You can also look at [several
+examples](examples/), which cover most of the provided functionality.
 
 [Boost Statechart]: https://www.boost.org/doc/libs/1_69_0/libs/statechart/doc/index.html
 [Boost MSM]: https://www.boost.org/doc/libs/1_69_0/libs/msm/doc/HTML/index.html
