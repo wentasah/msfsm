@@ -1,4 +1,4 @@
-// Copytight (C) 2019 Michal Sojka <ms@2x.cz>
+// Copyright (C) 2019, 2023 Michal Sojka <ms@2x.cz>
 //
 // SPDX-License-Identifier: MIT
 
